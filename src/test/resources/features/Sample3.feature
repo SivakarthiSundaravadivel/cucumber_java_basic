@@ -21,3 +21,19 @@ Feature: Introduction to cucumber part 3
       | name | age | message                   |
       | Tom  | 15  | Hello, Tom, you are a kid |
 
+
+  @debugs
+  Scenario Outline: a new scenario outline task
+    Given I am on feedback page
+    When I enter feedback name: "<name>"
+    And I enter feedback age: <age>
+    And I click submit button
+
+    Then I will see message: "<message>"
+    @working
+    Examples:
+      | name       | age | message                          |
+      | Siva       | 25  | Hello, Siva, you are an adult    |
+
+
+
