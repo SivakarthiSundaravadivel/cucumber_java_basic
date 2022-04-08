@@ -16,3 +16,9 @@ Feature: Introduction to cucumber part 2
     And I enter age: 61 using PO
     And I click submit age using PO
     Then I see message: "Hello, Bob, you are an adult" using PO
+
+  Scenario: a new scenario error
+    When I the enter name: "John" using PO
+    And I the click submit age using PO
+    Then I see error: "You haven't entered anything in age field" using PO
+    And I remain in age page using PO

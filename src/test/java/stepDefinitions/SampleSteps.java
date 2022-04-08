@@ -198,4 +198,27 @@ public class SampleSteps {
     public void iShoulSeeTheErrorMessage(String message)throws  Throwable{
        assertEquals(message,driver.findElement(By.id("ch1_error")).getText());
     }
+
+    @Given("^I am on feedbackk page$")
+    public void IAmOnFeedbackkPage(){
+
+        driver.get("https://kristinek.github.io/site/tasks/provide_feedback");
+    }
+
+    @When("^I select feedback languages$")
+    public void iSelectFeedbackLanguages(List<String> languages) throws Throwable {
+        for (String language : languages) {
+            driver.findElement(By.xpath("//input[@class='w3-check' and @value='" + language + "']")).click();
+        }
+    }
+
+    @And("^I click sendd feedback$")
+    public void iClickSenddFeedback(){
+        driver.findElement(By.tagName("button")).click();
+    }
+
+    @Then("^I can see languages \"([^\"]*)\" in feedback check$")
+    public void iCanSeeLanguages(String languages) throws Throwable {
+        assertEquals(languages,driver.findElement(By.id("language")).getText());
+    }
 }

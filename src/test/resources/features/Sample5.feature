@@ -31,3 +31,14 @@ Feature: Introduction to cucumber part 4
       | Ann  | 5   | Hello, Ann, you are a kid    |
       | Bob  | 61  | Hello, Bob, you are an adult |
 
+
+  Scenario : feedback only with languages
+    Given I am on feedback page
+    When I enter input in feedback page
+    |name  |siva |
+    |age   |25   |
+    |gener|male |
+    And click send feedback
+    Then I can see name "siva" in feedback check
+    Then I can see age "25" in feedback check
+    Then I can see gener "male" in feedback check

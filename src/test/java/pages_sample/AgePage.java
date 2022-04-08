@@ -66,4 +66,18 @@ public class AgePage {
         assertEquals(ageInput.getAttribute("value"), "");
         assertFalse(errorText.isDisplayed());
     }
+
+    public void entername(String name){
+        enterName(name);
+    }
+
+    public void enterage(String age){
+        age = "";
+        enterName(age);
+    }
+
+    public void errortextdisplay(){
+        errorText.getText();
+    }
+
 }
